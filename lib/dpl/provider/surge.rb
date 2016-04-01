@@ -4,6 +4,7 @@ module DPL
       npm_g 'surge'
 
       def project
+        context.shell "git rev-parse && cd \"$(git rev-parse --show-toplevel)\"" # Go to repo root 
         File.expand_path("./" + (options[:project] || '') )
       end
 
