@@ -2,9 +2,9 @@ module DPL
   class Provider
     class Surge < Provider
       npm_g 'surge'
+      context.shell "git rev-parse && cd \"$(git rev-parse --show-toplevel)\"" # Go to repo root 
 
       def project
-        context.shell "git rev-parse && cd \"$(git rev-parse --show-toplevel)\"" # Go to repo root 
         File.expand_path("./" + (options[:project] || '') )
       end
 
