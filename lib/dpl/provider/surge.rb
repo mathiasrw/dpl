@@ -26,9 +26,9 @@ module DPL
       end
 
       def push_app
-      	context.shell "echo " + ENV['HOME']
+      	context.shell "echo a) " + ENV['HOME']
       	context.shell "cd .."
-      	context.shell "echo " + ENV['HOME']
+      	context.shell "echo b) " + ENV['HOME']
         #context.shell "surge #{project} #{domain}"
       end
     end
